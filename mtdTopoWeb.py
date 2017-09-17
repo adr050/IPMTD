@@ -55,8 +55,21 @@ class mtdTopo(Topo):
 
         intfName = sys.argv[1] if len(sys.argv) > 1 else 'enp8s0'
         self.Intf(intfName, node=s2)
+        '''
+          File "/home/adrux/Documents/git/IPMTD/mtdTopoWeb.py", line 246, in <module>
+            run()
+          File "/home/adrux/Documents/git/IPMTD/mtdTopoWeb.py", line 92, in run
+            topo = mtdTopo(n=10)
+          File "/home/adrux/Documents/git/IPMTD/mtdTopoWeb.py", line 57, in __init__
+            self.Intf(intfName, node=s2)
+        AttributeError: 'mtdTopo' object has no attribute 'Intf'
+        '''
 
-    '''def checkIntf(intf):
+    '''
+    Mininet Example Code for connecting hardware interfaces to vswitch
+    https://github.com/mininet/mininet/blob/master/examples/hwintf.py
+
+    def checkIntf(intf):
         "Make sure intf exists and is not configured."
         config = quietRun('ifconfig %s 2>/dev/null' % intf, shell=True)
         if not config:
